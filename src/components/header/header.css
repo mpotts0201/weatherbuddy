@@ -1,0 +1,9 @@
+.header-container {
+    height: 7vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 3%;
+    padding-right: 3%;
+    box-shadow: 0px 1px 10px grey;
+}
