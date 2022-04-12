@@ -1,14 +1,14 @@
 import {useEffect, useRef, useState} from "react";
-import maplibregl from "maplibre-gl";
+import maplibregl, { Map as MapType } from "maplibre-gl";
 import "./map.css";
 import {useLocation} from "../../hooks";
 
 const Map = () => {
     const mapContainer = useRef(null);
-    const map = useRef(null);
+    const map = useRef<MapType | any>();
 
     const [zoom] = useState(14);
-    const [API_KEY] = useState(process.env.REACT_APP_API_KEY);
+    const [API_KEY] = useState(process.env.REACT_APP_MAP_KEY);
 
     const {location, loading, error} = useLocation();
 
@@ -24,7 +24,7 @@ const Map = () => {
             });
         }
         if (lat && lng && mapContainer?.current) {
-            map.current.addControl(new maplibregl.NavigationControl(), "top-right");
+            map.current.addControl(new maplibregl.NavigationControl({}), "top-right");
             new maplibregl.Marker({color: "#FF0000"}).setLngLat([lng, lat]).addTo(map.current);
         }
     });

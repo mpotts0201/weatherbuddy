@@ -1,3 +1,4 @@
 import useLocation from './useLocation'
+import useWeather from './useWeather'
 
-export {useLocation}
+export {useLocation, useWeather}
