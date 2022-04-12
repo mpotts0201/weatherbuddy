@@ -37,8 +37,6 @@ const Map = () => {
         if (weather && location && map.current) {
             const {lat, lng} = location;
 
-            console.log(weather.current.weather[0].icon);
-
             const coneEl = document.createElement("div");
             coneEl.className = "cone";
 
